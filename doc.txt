@@ -1,0 +1,23 @@
+This code:
+
+- Creates random data about arrival and departure times for bikes with id Bike_ID at stations Station_ID
+between now and now minus 30 days.
+
+- Puts that data into a csv
+
+- Reads the csv and outputs the average journey time between stations for all bikes. I have included commented code to
+    calculate the average journey time for a particular bike.
+
+    I used Python 3.7. Some of the timedelta functionality may only be available in 3.7 ?
+
+
+There is a bug with the data creation in that, the more records created, the more likely it is that a particular bike
+will arrive at a station before it departs from another station. The threshold for this seems to be around 550 records.
+
+I would have written tests with unittest.TestCase, but I ran out of time. I would normally test by creating some dummy
+data and asserting the response is the same as I get from the code, but this code does that anyway? I am not sure how
+robust my code would be over year boundaries, so it might be an idea to test that, but it relies heavily on timedelta
+and that should be well tested - tho if I wrote a year boundary test with the expectation that, eventually, someone
+would amend this code to include something that could possibly fail a year boundary test, that might be prudent.
+
+I may have mocked variables with Mock() eg: mocking 'journeys' to test the average calculation.
