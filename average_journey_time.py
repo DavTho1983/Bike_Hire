@@ -8,7 +8,8 @@ from create_csv import CreateCsv
 def get_average_journey_times(data):
     data = data.set_index([0]).T
     grouped_df = data.groupby(['Bike_ID'])
-    average_bike_journey_times = [] #The average journey times for each bike
+    # The average journey times for each bike
+    # average_bike_journey_times = []
     bike_journey_times_all_bikes = []
     journeys = 0
     for bike, item in grouped_df:
@@ -30,7 +31,6 @@ def get_average_journey_times(data):
             # average_journey_time = sum(total_time, timedelta())/len(arrived)
             journeys += len(arrived)
         # average_bike_journey_times.append(average_journey_time)
-    print(journeys)
     average_average_bike_journey_time = sum(bike_journey_times_all_bikes, timedelta())/journeys
     seconds = average_average_bike_journey_time.seconds
     days = average_average_bike_journey_time.days

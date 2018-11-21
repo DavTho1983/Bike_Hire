@@ -22,7 +22,7 @@ class CreateCsv:
         for i in range(10):
             bike_ids.append(random.randrange(1, 10000))
 
-        for i in range(1000):
+        for i in range(100):
             arrival = self.get_random_arrival_time()
             bike_hire.loc[i] = [
                 self.get_random_station_id(),
